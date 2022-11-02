@@ -1,8 +1,8 @@
 # .npxl formatting
 
-`{dimx} {color} {dimy}`
+`{dimx} {dimy} {color}`
 
-The dimension numbers show how many pixels wide and tall the image will be, while the middle number indicates how many characters should be in each pixel, 1 for grayscale and 3 for full-color
+The dimension numbers show how many pixels wide and tall the image will be, while the last number indicates how many characters should be in each pixel, 1 for grayscale and 3 for full-color
 
 `{base}` 
 
@@ -21,7 +21,7 @@ The idea here is to describe a brightness value with just one UTF-8 character, s
 ## grayscale example:
 
 ```
-32 1 8
+32 8 1
 16
 0123456789abcdef0123456789abcdef
 0123456789abcdef0123456789abcdef
@@ -39,7 +39,7 @@ This data corresponds to the `gray` images in PNG and PPM. It is a 32x8 image us
 ## color example:
 
 ```
-8 3 8
+8 8 3
 16
 000200400600800a00c00e00
 002202402602802a02c02e02
