@@ -1,4 +1,4 @@
-# .npxl formatting
+# .npxl formatting guide
 
 `{dimx} {dimy} {color}`
 
