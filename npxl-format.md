@@ -1,14 +1,14 @@
 # .npxl formatting guide
 
-`{dimx} {dimy} {color}`
+`{dimx} {dimy}`
 
-The dimension numbers show how many pixels wide and tall the image will be, while the last number indicates how many characters should be in each pixel, 1 for grayscale and 3 for full-color
+The dimension numbers show how many pixels wide and tall the image will be;
 
-`{base}` 
+`{colors} {base}` 
 
-number system to use when reading characters,
+indicates how many characters are in each pixel, and what counting system for each character to use
+
 `2` is binary,
-`10` is decimal,
 `16` is hexadecimal,
 `64` is base64, etc.
 
