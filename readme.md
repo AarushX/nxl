@@ -12,4 +12,5 @@ The PPM file is little more a list of numbers for each color value, but these va
 
 Effectively, NPXL saves on space by encoding more information into each character and cutting space-characters in between.
 
-A more specific NPXL format guide exists in its own markdown file.
+A more specific NPXL format guide exists in its own file: 
+[npxl-format.md](./npxl-format.md)

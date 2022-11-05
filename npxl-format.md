@@ -61,3 +61,5 @@ This data corresponds to an 8x8 image with three base-16 characters per pixel (m
 
 ---
 To see the benefits of the format, open the PNG and PPM examples as text and note that NPXL manages to store the image efficiently without a cancerous format.
+
+[Return to readme.md](./readme.md)
