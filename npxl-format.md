@@ -4,18 +4,18 @@ Line 1: `{dimx} {dimy}`
 
 - `{dimx}` and `{dimy}` indicate how many pixels wide and tall the image will be
 
-Line 2: `{colors} {base}`
+Line 2: `{base}` `{colors}`
 
-- `{colors}` decides how many values will be used for each pixel. If one value is used, that will corresdpond to the grayscale brightness of the pixel. Three values represent RGB, etc.
 - `{base}` will be the base of the counting system, or one more than the maximum value for a character.
 2 is binary,
 16 is hexadecimal,
 and 64 is base-64.
+- `{colors}` decides how many values will be used for each pixel. If one value is used, that will corresdpond to the grayscale brightness of the pixel. Three values represent RGB, etc.
 
 any further: `{data}`
 
 - simply input all values in order.
-- don't add any spaces between the characters, line breaks are optional and redundant.
+- don't add any spaces between the characters, but break lines accordingly.
 
 The idea here is to describe a brightness value with just one UTF-8 character, standardizing lengths in the process. This means not only will each value only use one character, but there will also not be space character in between.
 
@@ -25,7 +25,7 @@ The idea here is to describe a brightness value with just one UTF-8 character, s
 
 ```
 32 8
-1 16
+16 1
 0123456789abcdef0123456789abcdef
 0123456789abcdef0123456789abcdef
 0123456789abcdef0123456789abcdef
@@ -44,7 +44,7 @@ This data corresponds to a 32x8 image with one base-16 character per pixel (maki
 *check the image `color` in formats PNG, PPM, and NPXL in `./examples`*
 ```
 8 8
-3 16
+16 3
 000200400600800a00c00e00
 002202402602802a02c02e02
 004204404604804a04c04e04
