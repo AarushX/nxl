@@ -1,28 +1,31 @@
 # .npxl formatting guide
 
-`{dimx} {dimy}`
+Line 1: `{dimx} {dimy}`
 
-The dimension numbers show how many pixels wide and tall the image will be;
+- `{dimx}` and `{dimy}` indicate how many pixels wide and tall the image will be
 
-`{colors} {base}` 
+Line 2: `{colors} {base}`
 
-indicates how many characters are in each pixel, and what counting system for each character to use
+- `{colors}` decides how many values will be used for each pixel. If one value is used, that will corresdpond to the grayscale brightness of the pixel. Three values represent RGB, etc.
+- `{base}` will be the base of the counting system, or one more than the maximum value for a character.
+2 is binary,
+16 is hexadecimal,
+and 64 is base-64.
 
-`2` is binary,
-`16` is hexadecimal,
-`64` is base64, etc.
+any further: `{data}`
 
-`{data}`
+- simply input all values in order.
+- don't add any spaces between the characters, line breaks are optional and redundant.
 
-don't add spaces in between just list characters
+The idea here is to describe a brightness value with just one UTF-8 character, standardizing lengths in the process. This means not only will each value only use one character, but there will also not be space character in between.
 
-The idea here is to describe a brightness value with just one UTF-8 character, standardizing lengths in the process. This means not only will each value only use one character, but there will also not be space character in between
-
-## grayscale example:
+---
+## **grayscale example:**
+*check the image `gray` in formats PNG, PPM, and NPXL in `./examples`*
 
 ```
-32 8 1
-16
+32 8
+1 16
 0123456789abcdef0123456789abcdef
 0123456789abcdef0123456789abcdef
 0123456789abcdef0123456789abcdef
@@ -32,15 +35,16 @@ The idea here is to describe a brightness value with just one UTF-8 character, s
 0123456789abcdef0123456789abcdef
 0123456789abcdef0123456789abcdef
 ```
-This data corresponds to the `gray` images in PNG and PPM. It is a 32x8 image using one base-16 value for each pixel
+This data corresponds to a 32x8 image with one base-16 character per pixel (making it grayscale).
 
 <img src="./examples/gray.png" width="50%">
 
-## color example:
-
+---
+## **color example:**
+*check the image `color` in formats PNG, PPM, and NPXL in `./examples`*
 ```
-8 8 3
-16
+8 8
+3 16
 000200400600800a00c00e00
 002202402602802a02c02e02
 004204404604804a04c04e04
@@ -51,6 +55,9 @@ This data corresponds to the `gray` images in PNG and PPM. It is a 32x8 image us
 00e20e40e60e80ea0ec0ee0e
 ```
 
-This data corresponds to the `color` images in PNG and PPM. It is an 8x8 image using three base-16 values for each pixel
+This data corresponds to an 8x8 image with three base-16 characters per pixel (making it RGB).
 
 <img src="./examples/color.png" width="25%">
+
+---
+To see the benefits of the format, open the PNG and PPM examples as text and note that NPXL manages to store the image efficiently without a cancerous format.

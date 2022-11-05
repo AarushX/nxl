@@ -1,18 +1,17 @@
 S = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ<>'
-def int2hex(val):
+def write16(val):
     string = ''
     places = []
     while val >= 1:
-        leftover = val - (val // 16 * 16)
-        val //= 16
+        leftover = val % 16
+        val >>= 4
         string = S[leftover] + string
     return string
-def int2b64(val):
+def write64(val):
     string = ''
     places = []
     while val >= 1:
-        leftover = val - (val // 64 * 64)
-        val //= 64
+        leftover = val % 64
+        val >>= 6
         string = S[leftover] + string
     return string
-def 
